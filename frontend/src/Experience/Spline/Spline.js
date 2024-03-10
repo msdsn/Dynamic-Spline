@@ -1,5 +1,6 @@
 import { Application } from '@splinetool/runtime';
 import Experience from '../Experience';
+import ApiConnection from '../../ApiConnection';
 export default class Spline
 {
     constructor(){
@@ -9,6 +10,7 @@ export default class Spline
         this._Init();
     }
     _Init(){
+        this.apiConnection = new ApiConnection();
         this.instance = new Application(this.canvas);
         this.instance.load(this.url);
     }
